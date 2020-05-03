@@ -14,7 +14,7 @@ Requires [zinit](https://github.com/zdharma/zinit).
 
 ## Neovim
 
-Symlink your neovim `init.vim` to this one (e.g. `ln -s <path to repo>/init.vim <path to home>/.config/nvim/init.vim` (use absolute paths; relative ones can be weird).
+Symlink your neovim `init.vim` to this one (e.g. `ln -s <path to repo>/init.vim <path to home>/.config/nvim/init.vim` - use absolute paths; relative ones can be weird).
 
 Requires [vim-plug](https://github.com/junegunn/vim-plug).
 
