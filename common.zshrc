@@ -42,7 +42,8 @@ alias i3b="$EDITOR ~/.dotfiles/i3blocksconfig"
 alias i3c="$EDITOR ~/.dotfiles/i3config"
 alias zc="$EDITOR ~/.dotfiles/common.zshrc"
 alias zlc="$EDITOR ~/.zshrc"
-alias vm="$EDITOR ~/.dotfiles/init.vim"
+alias vc="$EDITOR ~/.dotfiles/init.vim"
+alias vlc="$EDITOR ~/.config/nvim/local.vim"
 alias zr="source ~/.zshrc"
 
 # Kubernetes aliases

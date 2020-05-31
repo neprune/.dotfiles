@@ -109,3 +109,7 @@ let g:airline_theme='solarized'
 " =============
 
 let g:UltiSnipsExpandTrigger="<enter>"
+
+" Local config
+" =============
+source ~/.config/nvim/local.vim
