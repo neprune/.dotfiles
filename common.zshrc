@@ -54,6 +54,7 @@ alias kgj="kubectl get jobs"
 alias kgc="kubectl get configmaps"
 alias kdj="kubectl describe job"
 alias kdc="kubectl describe configmap"
+alias kd="kubectl describe"
 alias kg="kubectl get"
 
 # Git aliases
