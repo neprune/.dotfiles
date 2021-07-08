@@ -38,8 +38,6 @@ alias t="tree"
 alias gels="grep -rnw . -e"
 
 # Config editing aliases
-alias i3b="$EDITOR ~/.dotfiles/i3blocksconfig"
-alias i3c="$EDITOR ~/.dotfiles/i3config"
 alias zc="$EDITOR ~/.dotfiles/common.zshrc"
 alias zlc="$EDITOR ~/.zshrc"
 alias vc="$EDITOR ~/.dotfiles/init.vim"
