@@ -6,13 +6,6 @@ HIST_STAMPS="dd.mm.yyyy"
 # ZSH plugins
 plugins=(git history-substring-search autojump vi-mode kubectl)
 
-# ZPlugins
-zplugin light jonmosco/kube-ps1
-
-# K8s prompt
-RPROMPT='$(kube_ps1) '$RPROMPT
-KUBE_PS1_CTX_COLOR=green
-
 # Set-up editor
 export EDITOR='nvim'
 
