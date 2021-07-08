@@ -56,7 +56,7 @@ alias kd="kubectl describe"
 alias kg="kubectl get"
 
 # Git aliases
-alias gcm="git commit -m"
+alias gcme="git commit -m"
 alias gcmn="git commit --no-verify -m"
 alias gcob="git checkout -b"
 alias gpn="git push --no-verify"
