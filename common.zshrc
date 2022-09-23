@@ -26,6 +26,7 @@ alias v="nvim"
 alias untar="tar -xzvf"
 alias al="alias | grep"
 alias t="tree"
+alias rm="rm -i"
 
 # Search aliases
 alias gels="grep -rnw . -e"
@@ -55,4 +56,6 @@ alias gcob="git checkout -b"
 alias gpn="git push --no-verify"
 alias gpsupn="gpsup --no-verify"
 alias gprune="git branch --merged >/tmp/merged-branches && v /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
+alias gcf="git commit --fixup"
+alias gwip="git commit --message 'wip'"
 
