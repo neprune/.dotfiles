@@ -8,6 +8,7 @@ plugins=(git history-substring-search autojump vi-mode kubectl)
 
 # Set-up editor
 export EDITOR='nvim'
+alias vim='nvim'
 
 #APT aliases
 if type "apt" > /dev/null; then
@@ -58,4 +59,7 @@ alias gpsupn="gpsup --no-verify"
 alias gprune="git branch --merged >/tmp/merged-branches && v /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
 alias gcf="git commit --fixup"
 alias gwip="git commit --message 'wip'"
+alias gbn='git --no-pager branch -vv --sort=committerdate'
 
+# Poetry aliases
+alias ponuke="rm -rf $(poetry env info -p)"

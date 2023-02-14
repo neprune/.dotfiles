@@ -7,6 +7,15 @@
 "   'jj' to escape.
     imap jj <Esc>
 
+"   Spaces, not tabs.
+    set expandtab
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+
+"   Show me whitespace stuff.
+    set list
+
 "   Show line numbers...
     set number
 "   apart from for terminals.
