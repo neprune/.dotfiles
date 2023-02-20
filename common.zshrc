@@ -62,4 +62,6 @@ alias gwip="git commit --message 'wip'"
 alias gbn='git --no-pager branch -vv --sort=committerdate'
 
 # Poetry aliases
-alias ponuke="rm -rf $(poetry env info -p)"
+if type "poetry" > /dev/null; then
+  alias ponuke="rm -rf $(poetry env info -p)"
+fi
