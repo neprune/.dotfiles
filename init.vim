@@ -87,16 +87,19 @@
 "     ==========
 "         Solarized colors.
           Plug 'altercation/vim-colors-solarized'
-  
+
 "         Status line.
           Plug 'vim-airline/vim-airline'
-  
+
 "         Themes for the status line.
           Plug 'vim-airline/vim-airline-themes'
 
 "              Set up solarized.
                let g:airline_theme='solarized'
                let g:airline_solarized_bg='dark'
+
+"         JSON syntax highlighting.
+          Plug 'elzr/vim-json'
 
 "     Functionality
 "     =============
