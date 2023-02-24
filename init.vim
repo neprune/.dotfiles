@@ -75,6 +75,9 @@
      map <C-m> :cprevious<CR>
      nnoremap <leader>a :cclose<CR>
 
+"    Copy to system clipboard
+     map yc "*y
+
 
 " Plugins (using vim-plug)
 " ========================
