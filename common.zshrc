@@ -59,8 +59,3 @@ alias gprune="git branch --merged >/tmp/merged-branches && v /tmp/merged-branche
 alias gcf="git commit --fixup"
 alias gwip="git commit --message 'wip'"
 alias gbn='git --no-pager branch -vv --sort=committerdate'
-
-# Poetry aliases
-if type "poetry" > /dev/null; then
-  alias ponuke="rm -rf $(poetry env info -p)"
-fi
