@@ -4,7 +4,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd.mm.yyyy"
 
 # ZSH plugins
-plugins=(git history-substring-search autojump vi-mode kubectl)
+plugins=(git history-substring-search autojump)
 
 # Set-up editor
 export EDITOR='nvim'

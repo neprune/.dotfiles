@@ -114,6 +114,7 @@
 "         Better terminal navigation UX than nvim default .
           Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
+
 "         Organise things into projects.
           Plug 'ahmedkhalf/project.nvim'
 
@@ -179,6 +180,9 @@
 "             'Ctrl+v' and 'Ctrl+x' open entry in a new vertical/horizontal split.
 "             '?' view mappings.
 
+"         Toggleterm telescope picker.
+          Plug 'git@github.com:tknightz/telescope-termfinder.nvim.git'
+
 
 "         Align a block around some chosen character.
           Plug 'junegunn/vim-easy-align'
@@ -228,13 +232,7 @@
     source ~/.config/nvim/local.vim
 
 
-" Start configuration
-" ===================
-"
-
 " Lua Start Configuration
 " =======================
 
-lua << EOF
-require('start')
-EOF
+:luafile ~/.config/nvim/start.lua
