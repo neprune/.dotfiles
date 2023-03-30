@@ -28,9 +28,8 @@ alias untar="tar -xzvf"
 alias al="alias | grep"
 alias t="tree"
 alias rm="rm -i"
-
-# Search aliases
-alias gels="grep -rnw . -e"
+alias rm="rm -i"
+alias w="tail -n0 -f"
 
 # Config editing aliases
 alias zc="$EDITOR ~/.dotfiles/common.zshrc"

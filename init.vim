@@ -27,43 +27,50 @@
 "   Open new horizontal splits below.
     set splitbelow
 
+"   ',q' to close current split.
+    nnoremap <leader>q :q<CR>
+"   ',t' to open a new tab.
+    nnoremap <leader>t :tabnew<CR>
+"   ',v' to open a new vsplit.
+    nnoremap <leader>v :vsplit<CR>
+"   ',s' to open a new split.
+    nnoremap <leader>s :split<CR>
+
 "   Navigate windows with WASD ',m<direction>'.
     map <leader>mw <C-w><Up>
     map <leader>ma <C-w>h
     map <leader>ms <C-w><Down>
     map <leader>md <C-w>l
 
-"   ',c' to go to next tab.
-    nnoremap <leader>f gt
-"   ',C' to go to previous tab.
-    nnoremap <leader>F gT
 
-"   ',<number>' to go to numbered tab.
-    nnoremap <leader>1 1gt
-    nnoremap <leader>2 2gt
-    nnoremap <leader>3 3gt
-    nnoremap <leader>4 4gt
-    nnoremap <leader>5 5gt
-    nnoremap <leader>6 6gt
-    nnoremap <leader>7 7gt
-    nnoremap <leader>8 8gt
-    nnoremap <leader>9 9gt
-    nnoremap <leader>0 :tablast<CR>
+"   ',t<number>' to go to numbered tab.
+    nnoremap <leader>t1 1gt
+    nnoremap <leader>t2 2gt
+    nnoremap <leader>t3 3gt
+    nnoremap <leader>t4 4gt
+    nnoremap <leader>t5 5gt
+    nnoremap <leader>t6 6gt
+    nnoremap <leader>t7 7gt
+    nnoremap <leader>t8 8gt
+    nnoremap <leader>t9 9gt
+    nnoremap <leader>t0 :tablast<CR>
 
-"   ',vv' to open the vimrc in a in vertical split.
-    map <leader>vv :vsp $MYVIMRC<CR>
-"   ',vs' to open the vimrc in a in horizontal split.
-    map <leader>vs :sp $MYVIMRC<CR>
-"   ',vt' to open the vimrc in a in a new tab.
-    map <leader>vt :tabnew $MYVIMRC<CR>
-"   ',vr' to reload the vimrc.
-    map <leader>vr :source $MYVIMRC<CR>
+"   ',cv' to open the vimrc in a in vertical split.
+    map <leader>cv :vsp $MYVIMRC<CR>
+"   ',cs' to open the vimrc in a in horizontal split.
+    "map <leader>cs :sp $MYVIMRC<CR>
+"   ',ct' to open the vimrc in a in a new tab.
+    map <leader>ct :tabnew $MYVIMRC<CR>
+"   ',c.' to open the vimrc in the current buffer.
+    map <leader>c. :e $MYVIMRC<CR>
+"   ',cr' to reload the vimrc.
+    map <leader>cr :source $MYVIMRC<CR>
 
 "   ',tv' to open a terminal in a vertical split.
     map <leader>tv :vsp<CR> :terminal<CR> GA
 "   ',ts' to open a terminal in a horizontal split.
     map <leader>ts :sp<CR> :terminal<CR> GA
-"   ',tt' to open a terminal in a horizontal split.
+"   ',tt' to open a terminal in a new tab.
     map <leader>tt :tab ter<CR> GA
 
 "   Use 'tab' to cycle through auto-complete suggestions
@@ -106,17 +113,39 @@
 
 "     Functionality
 "     =============
-"         Languagae aware line splitting and joining.
+"         Organise things into projects.
+          Plug 'ahmedkhalf/project.nvim'
+
+
+"         Language aware line splitting and joining.
           Plug 'AndrewRadev/splitjoin.vim'
 
 "             'gS' to split a line.
 "             'gJ' to join multiple lines.
 
+"         IDE like tabs.
+          Plug 'bagrat/vim-buffet'
+
+"              Show numbers.
+               let g:buffet_show_index=1
+
+"              Switch between buffers.
+               nmap <leader>1 <Plug>BuffetSwitch(1)
+               nmap <leader>2 <Plug>BuffetSwitch(2)
+               nmap <leader>3 <Plug>BuffetSwitch(3)
+               nmap <leader>4 <Plug>BuffetSwitch(4)
+               nmap <leader>5 <Plug>BuffetSwitch(5)
+               nmap <leader>6 <Plug>BuffetSwitch(6)
+               nmap <leader>7 <Plug>BuffetSwitch(7)
+               nmap <leader>8 <Plug>BuffetSwitch(8)
+               nmap <leader>9 <Plug>BuffetSwitch(9)
+               nmap <leader>0 <Plug>BuffetSwitch(10)
+
 "         Autocomplete and code navigation for Python.
           Plug 'davidhalter/jedi-vim'
 
 "             ',d' go to definition / declaration.
-	      autocmd FileType python let g:jedi#goto_command = "<leader>d"
+              autocmd FileType python let g:jedi#goto_command = "<leader>d"
 "             ',g' go to assignments.
               autocmd FileType python let g:jedi#goto_assignments_command = "<leader>g"
 "             ',K' go to docs.
@@ -129,17 +158,20 @@
               autocmd FileType python let g:jedi#rename_command = "<leader>r"
 
 "         Fuzzy finder.
-	  Plug 'nvim-lua/plenary.nvim'
+          Plug 'nvim-lua/plenary.nvim'
           Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 "             ',ff' to search files.
-	      nnoremap <leader>ff <cmd>Telescope find_files<cr>
+              nnoremap <leader>ff <cmd>Telescope find_files<cr>
 "             ',fg' to search git files.
-	      nnoremap <leader>fg <cmd>Telescope git_files<cr>
+              nnoremap <leader>fg <cmd>Telescope git_files<cr>
 "             ',fl' to live grep.
               nnoremap <leader>fl <cmd>Telescope live_grep<cr>
 "             ',fb' to search buffers.
               nnoremap <leader>fb <cmd>Telescope buffers<cr>
+              nnoremap <leader>lg :lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>
+              nnoremap <leader>p :lua require'telescope'.extensions.projects.projects{}<CR>
+
 
 "             In normal mode:
 "             'Ctrl+t' open entry in new tab.
@@ -158,13 +190,10 @@
 "             e.g. 'gaip2=' - align selected para around second equals.
               nmap ga <Plug>(EasyAlign)
 
+"        File explorer.
+         Plug 'nvim-tree/nvim-web-devicons'
+         Plug 'nvim-tree/nvim-tree.lua'
 
-"         File system explorer.
-          Plug 'scrooloose/nerdtree'
-
-"             Open the explorer if vim is open without a specific file.
-              autocmd StdinReadPre * let s:std_in=1
-              autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "         Comment and uncomment stuff.
           Plug 'scrooloose/nerdcommenter'
@@ -175,7 +204,7 @@
 "         Autocomplete.
           Plug 'shougo/deoplete.nvim'
 
-"	      Run at startup.
+"             Run at startup.
               let g:deoplete#enable_at_startup = 1
 
 "         Run git commands.
@@ -184,6 +213,28 @@
 "             ':Git <cmd>' to do your usual git shenanigans.
 
     call plug#end()
+
+
+" Lua Configuration
+" =================
+lua << EOF
+  -- Default project.nvim configuration.
+  require("project_nvim").setup{}
+
+  -- Add project.nvim extension to telescope.
+  require('telescope').load_extension('projects')
+
+  -- Configure nvim.tree for project.nvim.
+  require("nvim-tree").setup({
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
+    update_focused_file = {
+      enable = true,
+      update_root = true
+    },
+  })
+
+EOF
 
 " Additional Config
 " =================
