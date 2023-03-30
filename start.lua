@@ -1,5 +1,5 @@
 -- Default project.nvim configuration.
-require("project_nvim").setup{manual_mode=true, patterns={".git", ".project"}}
+require("project_nvim").setup{manual_mode=false, patterns={".git", ".project"}}
 
 -- Add project.nvim extension to telescope.
 require('telescope').load_extension('projects')
