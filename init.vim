@@ -95,9 +95,6 @@
 
 "     Aesthetics
 "     ==========
-"         Solarized colors.
-          Plug 'altercation/vim-colors-solarized'
-
 "         Status line.
           Plug 'vim-airline/vim-airline'
 
@@ -190,10 +187,15 @@
 "             e.g. 'gaip2=' - align selected para around second equals.
               nmap ga <Plug>(EasyAlign)
 
-"        File explorer.
-         Plug 'nvim-tree/nvim-web-devicons'
-         Plug 'nvim-tree/nvim-tree.lua'
+"         File explorer.
+          Plug 'nvim-tree/nvim-web-devicons'
+          Plug 'nvim-tree/nvim-tree.lua'
 
+"             ', ' to open and focus the tree view.
+              nnoremap <leader><space> <cmd>NvimTreeFocus<cr>
+
+"             ',w' focus on current open file in tre view.
+              nnoremap <leader>w <cmd>NvimTreeFocus<cr>
 
 "         Comment and uncomment stuff.
           Plug 'scrooloose/nerdcommenter'
@@ -215,8 +217,9 @@
     call plug#end()
 
 
-" Lua Configuration
-" =================
+" Start configuration
+" ===================
+"
 lua << EOF
   -- Default project.nvim configuration.
   require("project_nvim").setup{}
@@ -233,6 +236,12 @@ lua << EOF
       update_root = true
     },
   })
+
+  -- Alywas open nvim.tree.
+  local function open_nvim_tree()
+      require("nvim-tree.api").tree.open()
+  end
+  vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 EOF
 
