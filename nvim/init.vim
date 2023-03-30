@@ -30,12 +30,12 @@
 
 "   ',q' to close current split.
     nnoremap <leader>q :q<CR>
-"   ',t' to open a new tab.
-    nnoremap <leader>t :tabnew<CR>
 "   ',v' to open a new vsplit.
-    nnoremap <leader>v :vsplit<CR>
+    nnoremap <leader>v :vsplit:ene<CR>
 "   ',s' to open a new split.
-    nnoremap <leader>s :split<CR>
+    nnoremap <leader>s :split<CR>:ene<CR>
+"   ',t' to open a new split.
+    nnoremap <leader>t :tab<CR>:ene<CR>
 
 "   Navigate windows with WASD ',m<direction>'.
     map <leader>mw <C-w><Up>
@@ -67,13 +67,6 @@
 "   ',cr' to reload the vimrc.
     map <leader>cr :source $MYVIMRC<CR>
 
-"   ',tv' to open a terminal in a vertical split.
-    map <leader>tv :vsp<CR> :terminal<CR> GA
-"   ',ts' to open a terminal in a horizontal split.
-    map <leader>ts :sp<CR> :terminal<CR> GA
-"   ',tt' to open a terminal in a new tab.
-    map <leader>tt :tab ter<CR> GA
-
 "   Use 'tab' to cycle through auto-complete suggestions
     inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
     inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
@@ -96,6 +89,10 @@
 
 "     Aesthetics
 "     ==========
+"
+"         Solarized.
+          Plug 'overcache/NeoSolarized'
+
 "         Status line.
           Plug 'vim-airline/vim-airline'
 
@@ -114,6 +111,8 @@
 "         Better terminal navigation UX than nvim default .
           Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
+"              ',T' to open terminal
+               nmap <leader>T <cmd>ToggleTerm<cr>
 
 "         Organise things into projects.
           Plug 'ahmedkhalf/project.nvim'
@@ -171,8 +170,12 @@
               nnoremap <leader>fl <cmd>Telescope live_grep<cr>
 "             ',fb' to search buffers.
               nnoremap <leader>fb <cmd>Telescope buffers<cr>
-              nnoremap <leader>lg :lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>
-              nnoremap <leader>p :lua require'telescope'.extensions.projects.projects{}<CR>
+"             ',fe' to live grep.
+              nnoremap <leader>fe :lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>
+"             ',fw' to search projects.
+              nnoremap <leader>fw :lua require'telescope'.extensions.projects.projects{}<CR>
+"             ',fv' to search terminals.
+              nnoremap <leader>fv <cmd>Telescope termfinder<cr>
 
 
 "             In normal mode:
@@ -235,4 +238,9 @@
 " Lua Start Configuration
 " =======================
 
-:luafile ~/.config/nvim/start.lua
+    :luafile ~/.config/nvim/post_init.lua
+
+" Colorscheme
+" =======================
+      set termguicolors
+      colorscheme NeoSolarized
