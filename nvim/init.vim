@@ -89,7 +89,6 @@
 
 "     Aesthetics
 "     ==========
-"
 "         Solarized.
           Plug 'overcache/NeoSolarized'
 
@@ -105,6 +104,10 @@
 
 "         JSON syntax highlighting.
           Plug 'elzr/vim-json'
+
+"         Fish syntax.
+          Plug 'khaveesh/vim-fish-syntax'
+
 
 "     Functionality
 "     =============
@@ -205,8 +208,8 @@
 "             ', ' to open and focus the tree view.
               nnoremap <leader><space> <cmd>NvimTreeFocus<cr>
 
-"             ',w' focus on current open file in tre view.
-              nnoremap <leader>w <cmd>NvimTreeFocus<cr>
+"             ',w' focus on current open file in tree view.
+              nnoremap <leader>w <cmd>NvimTreeFindFile<cr>
 
 "         Comment and uncomment stuff.
           Plug 'scrooloose/nerdcommenter'

@@ -27,7 +27,7 @@ require("toggleterm").setup{
   size = 50,
   direction = 'float',
   winbar = {
-    enabled = false,
+    enabled = true,
     name_formatter = function(term) --  term: Terminal
         return term.name
     end
@@ -39,10 +39,3 @@ require('telescope').load_extension("termfinder")
 
 -- Setup custom terminals.
 local Terminal  = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
-
-function _lazygit_toggle()
-  lazygit:toggle()
-end
-
-vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
