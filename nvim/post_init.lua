@@ -38,4 +38,4 @@ require("toggleterm").setup{
 require('telescope').load_extension("termfinder")
 
 -- Setup custom terminals.
-local Terminal  = require('toggleterm.terminal').Terminal
+-- local Terminal  = require('toggleterm.terminal').Terminal
