@@ -67,18 +67,20 @@
 "   ',cr' to reload the vimrc.
     map <leader>cr :source $MYVIMRC<CR>
 
-"   Use 'tab' to cycle through auto-complete suggestions
+"   Use 'tab' to cycle through auto-complete suggestions.
     inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
     inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
-"    Navigate errors
+"    Navigate errors.
      map <C-n> :cnext<CR>
      map <C-m> :cprevious<CR>
      nnoremap <leader>a :cclose<CR>
 
-"    Copy to system clipboard
+"    Copy to system clipboard.
      map yc "*y
 
+"    No swapfiles - I tend to save regularly and don't appreciate the faff.
+     set noswapfile
 
 " Plugins (using vim-plug)
 " ========================
