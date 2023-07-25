@@ -166,17 +166,19 @@
 "         Fuzzy finder.
           Plug 'nvim-lua/plenary.nvim'
           Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+"         Pass flags to ripgrep picker.
+          Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 
 "             ',ff' to search files.
               nnoremap <leader>ff <cmd>Telescope find_files<cr>
 "             ',fg' to search git files.
               nnoremap <leader>fg <cmd>Telescope git_files<cr>
 "             ',fl' to live grep.
-              nnoremap <leader>fl <cmd>Telescope live_grep<cr>
+              nnoremap <leader>fl <cmd>Telescope live_grep_args<cr>
 "             ',fb' to search buffers.
               nnoremap <leader>fb <cmd>Telescope buffers<cr>
 "             ',fe' to live grep.
-              nnoremap <leader>fe :lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>
+              nnoremap <leader>fe :lua require('telescope.builtin').live_grep_args({grep_open_files=true})<CR>
 "             ',fw' to search projects.
               nnoremap <leader>fw :lua require'telescope'.extensions.projects.projects{}<CR>
 "             ',fv' to search terminals.
