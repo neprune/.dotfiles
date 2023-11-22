@@ -59,7 +59,7 @@
 "   ',cv' to open the vimrc in a in vertical split.
     map <leader>cv :vsp $MYVIMRC<CR>
 "   ',cs' to open the vimrc in a in horizontal split.
-    "map <leader>cs :sp $MYVIMRC<CR>
+    map <leader>cs :sp $MYVIMRC<CR>
 "   ',ct' to open the vimrc in a in a new tab.
     map <leader>ct :tabnew $MYVIMRC<CR>
 "   ',c.' to open the vimrc in the current buffer.
@@ -165,7 +165,8 @@
 
 "         Fuzzy finder.
           Plug 'nvim-lua/plenary.nvim'
-          Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+          Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
+          Plug 'nvim-treesitter/nvim-treesitter'
 "         Pass flags to ripgrep picker.
           Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 
@@ -231,6 +232,7 @@
           Plug 'tpope/vim-fugitive'
 
 "             ':Git <cmd>' to do your usual git shenanigans.
+
 
     call plug#end()
 
